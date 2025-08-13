@@ -12,53 +12,49 @@ const GamingTopbar = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-r from-green-100 via-green-50 to-green-100 border-b border-green-200 shadow-sm">
+    <div className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-b border-gray-700 shadow-md">
       {/* Main Topbar */}
-      <div className="bg-green-500 text-white py-2 px-4">
+      <div className="bg-gray-950 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
-            <div className="bg-white text-green-600 rounded-lg p-2 font-bold text-xl">
-              🎮
-            </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">9xmBet</h1>
-              <p className="text-green-100 text-xs">Premium Gaming Experience</p>
+              <img src="/images/logo.jpeg" alt="Logo" className="h-14 w-auto" />
             </div>
           </div>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="hover:text-green-200 transition-colors font-medium">Sports</a>
-            <a href="#" className="hover:text-green-200 transition-colors font-medium">Casino</a>
-            <a href="#" className="hover:text-green-200 transition-colors font-medium">Live Games</a>
-            <a href="#" className="hover:text-green-200 transition-colors font-medium">Poker</a>
-            <a href="#" className="hover:text-green-200 transition-colors font-medium">Esports</a>
+            <a href="#" className="hover:text-amber-400 transition-colors font-medium">Sports</a>
+            <a href="#" className="hover:text-amber-400 transition-colors font-medium">Casino</a>
+            <a href="#" className="hover:text-amber-400 transition-colors font-medium">Live Games</a>
+            <a href="#" className="hover:text-amber-400 transition-colors font-medium">Poker</a>
+            <a href="#" className="hover:text-amber-400 transition-colors font-medium">Esports</a>
           </nav>
 
           {/* User Actions */}
           <div className="flex items-center space-x-4">
-            <div className="hidden sm:flex items-center space-x-2 bg-green-600 px-3 py-1 rounded-full">
-              <span className="text-sm">Balance:</span>
-              <span className="font-bold">$1,247.50</span>
+            <div className="hidden sm:flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-full">
+              <span className="text-sm text-gray-300">Balance:</span>
+              <span className="font-bold text-amber-400">$1,247.50</span>
             </div>
-            <button className="bg-white text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+            <button className="bg-amber-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-400 transition-colors">
               Login
             </button>
-            <button className="bg-green-400 text-green-900 px-4 py-2 rounded-lg font-semibold hover:bg-green-300 transition-colors">
-             Register
+            <button className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-500 transition-colors">
+              Register
             </button>
           </div>
         </div>
       </div>
 
       {/* Promotions Marquee */}
-      <div className="bg-gradient-to-r from-green-200 to-green-100 py-2">
+      <div className="bg-gradient-to-r from-gray-800 to-gray-700 py-2">
         <Marquee
           gradient={false}
           speed={30}
           pauseOnHover={true}
-          className="text-green-800"
+          className="text-amber-400"
         >
           {promotions.map((promo, index) => (
             <span
@@ -72,16 +68,16 @@ const GamingTopbar = () => {
       </div>
 
       {/* Quick Stats Bar */}
-      <div className="bg-green-50 py-3 px-4 border-t border-green-200">
+      <div className="bg-gray-900 py-3 px-4 border-t border-gray-700">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap items-center justify-center md:justify-between text-sm text-green-700 space-y-2 md:space-y-0">
+          <div className="flex flex-wrap items-center justify-center md:justify-between text-sm text-gray-300 space-y-2 md:space-y-0">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
                 <span>12,847 Players Online</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-yellow-500">🏆</span>
+                <span className="text-amber-400">🏆</span>
                 <span>$2.4M+ Won Today</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -89,11 +85,11 @@ const GamingTopbar = () => {
                 <span>23 Live Games</span>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4 text-xs">
-              <span className="bg-green-200 px-3 py-1 rounded-full">🔒 SSL Secured</span>
-              <span className="bg-green-200 px-3 py-1 rounded-full">✓ Licensed</span>
-              <span className="bg-green-200 px-3 py-1 rounded-full">⚡ Instant Payouts</span>
+              <span className="bg-gray-800 px-3 py-1 rounded-full">🔒 SSL Secured</span>
+              <span className="bg-gray-800 px-3 py-1 rounded-full">✓ Licensed</span>
+              <span className="bg-gray-800 px-3 py-1 rounded-full">⚡ Instant Payouts</span>
             </div>
           </div>
         </div>

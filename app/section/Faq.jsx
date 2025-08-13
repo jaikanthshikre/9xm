@@ -36,17 +36,17 @@ const FaqSection = () => {
   const toggle = (idx) => setOpenIndex(openIndex === idx ? null : idx);
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-gray-900 py-12">
       <div className="container mx-auto px-5">
-        <h2 className="text-3xl font-bold text-green-900 mb-8">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-yellow-400 mb-8">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((item, idx) => (
-            <div key={idx} className="border rounded-lg overflow-hidden">
+            <div key={idx} className="border border-yellow-500 rounded-lg overflow-hidden">
               <button
                 onClick={() => toggle(idx)}
-                className="w-full flex justify-between items-center bg-gradient-to-r from-green-900 to-green-700 text-white px-6 py-4 focus:outline-none"
+                className="w-full flex justify-between items-center bg-gradient-to-r from-yellow-500 to-yellow-400 text-gray-900 font-semibold px-6 py-4 focus:outline-none"
               >
-                <span className="text-lg font-medium">{item.question}</span>
+                <span className="text-lg">{item.question}</span>
                 {openIndex === idx ? (
                   <ChevronUp className="w-5 h-5" />
                 ) : (
@@ -54,7 +54,7 @@ const FaqSection = () => {
                 )}
               </button>
               {openIndex === idx && (
-                <div className="px-6 py-4 bg-green-50 text-green-800">
+                <div className="px-6 py-4 bg-gray-800 text-yellow-100">
                   {item.answer}
                 </div>
               )}

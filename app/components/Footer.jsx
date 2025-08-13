@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-green-900 to-green-700 text-white py-10">
+    <footer className="bg-gradient-to-r from-gray-900 to-gray-700 text-white py-10">
       <div className="container mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Quick Links Column */}
         <div>
