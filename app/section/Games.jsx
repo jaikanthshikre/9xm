@@ -169,7 +169,7 @@ const games = [
         {/* Royal CTA Section */}
         <div className="text-center">
           <div className="inline-block group mb-8">
-            <button className="relative px-16 py-6 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 text-black rounded-full text-2xl font-black shadow-2xl hover:shadow-yellow-400/50 transition-all duration-500 transform hover:scale-110 overflow-hidden border-4 border-yellow-300 hover:border-yellow-200">
+            <button className="relative px-16 py-6 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 text-black rounded-full text-lg md:text-2xl font-black shadow-2xl hover:shadow-yellow-400/50 transition-all duration-500 transform hover:scale-110 overflow-hidden border-4 border-yellow-300 hover:border-yellow-200">
               <span className="relative z-10 flex items-center space-x-3">
                 <span>👑</span>
                 <span>DISCOVER ALL TREASURES</span>
@@ -181,7 +181,7 @@ const games = [
           </div>
           
           {/* Golden Stats */}
-          <div className="flex flex-wrap items-center justify-center space-x-12 text-amber-200">
+          <div className="flex flex-wrap items-center justify-center space-x-12 space-y-4 text-amber-200">
             <div className="flex items-center space-x-3 bg-gradient-to-r from-yellow-900/50 to-amber-900/50 px-6 py-3 rounded-full backdrop-blur-sm border border-yellow-400/30">
               <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse"></div>
               <span className="text-lg font-semibold">🎯 Live Players: 15,347</span>
