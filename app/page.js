@@ -11,7 +11,6 @@ export default function Home() {
 <>
 <GamingHeroSection/>
 <Games/>
-{/* <TopGames/> */}
 <WhyChooseUs/>
 <FaqSection/>
 <Testimonial/>

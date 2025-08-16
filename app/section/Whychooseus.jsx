@@ -89,10 +89,10 @@ const WhyChooseUs = () => {
           key={p.id}
           className="absolute w-2 h-2 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full opacity-60"
           style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            animation: `float ${p.duration}s ease-in-out infinite`,
-            animationDelay: `${p.delay}s`,
+            left: `₹{p.x}%`,
+            top: `₹{p.y}%`,
+            animation: `float ₹{p.duration}s ease-in-out infinite`,
+            animationDelay: `₹{p.delay}s`,
           }}
         />
       ))}
@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 bg-white/[0.06] border border-amber-400/20 px-8 py-3 rounded-full mb-8 shadow-lg">
             <Sparkles className="w-6 h-6 text-amber-400" />
-            <span className="text-amber-300 font-semibold tracking-wide">Why Champions Choose Us</span>
+            <span className="text-amber-300 font-semibold tracking-wide">Why People Choose Us</span>
             <Sparkles className="w-6 h-6 text-amber-400" />
           </div>
 
@@ -126,7 +126,7 @@ const WhyChooseUs = () => {
             <div className="hidden sm:block w-1 h-1 bg-amber-400 rounded-full"></div>
             <div className="flex items-center gap-2">
               <Gift className="w-5 h-5" />
-              <span className="font-semibold">$50M+ Paid Out</span>
+              <span className="font-semibold">₹50M+ Paid Out</span>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ const WhyChooseUs = () => {
                 key={index}
                 className={`group relative rounded-3xl p-8 transition-all duration-500 cursor-pointer transform hover:-translate-y-2
                   bg-white/[0.04] border border-amber-400/20 hover:border-amber-400/40 hover:shadow-amber-500/10 hover:shadow-xl
-                  ${activeCard === index ? 'ring-1 ring-amber-400/30 scale-105' : ''}`}
+                  ₹{activeCard === index ? 'ring-1 ring-amber-400/30 scale-105' : ''}`}
                 onMouseEnter={() => setActiveCard(index)}
                 onMouseLeave={() => setActiveCard(null)}
               >
@@ -152,7 +152,7 @@ const WhyChooseUs = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ₹{feature.color} rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="w-8 h-8 text-black drop-shadow" />
                   </div>
 

@@ -3,12 +3,10 @@ import Marquee from 'react-fast-marquee';
 
 const GamingTopbar = () => {
   const promotions = [
-    "🎰 Welcome Bonus: Get 100% match up to $500 on your first deposit!",
+    "🎰 Welcome Bonus: Get upto 10% Bonus on first deposit!",
     "🏆 Weekend Special: Double XP points on all slot games",
     "💎 VIP Program: Exclusive rewards and cashback for premium members",
-    "🎯 Daily Tournament: Win up to $10,000 in our daily poker championship",
-    "🔥 Hot Streak Bonus: Get 50 free spins on selected games",
-    "⚡ Flash Sale: 25% bonus on deposits made in the next 2 hours"
+    "🎯 Daily Tournament: Win up to ₹10,000 in our daily poker championship",
   ];
 
   return (
@@ -35,15 +33,15 @@ const GamingTopbar = () => {
           {/* User Actions */}
           <div className="flex items-center space-x-4">
             <div className="hidden sm:flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-full">
-              <span className="text-sm text-gray-300">Balance:</span>
-              <span className="font-bold text-amber-400">$1,247.50</span>
+              <span className="text-sm text-gray-300">Bonus: upto</span>
+              <span className="font-bold text-amber-400">₹1,0000.00</span>
             </div>
-            <button className="bg-amber-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-400 transition-colors">
+          <a href='https://wa.link/hwb' target='blank'> <button  className="bg-amber-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-400 transition-colors">
               Login
             </button>
-            <button className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-500 transition-colors">
+            <a href='https://wa.link/hwb' target='blank'></a>   <button className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-500 transition-colors">
               Register
-            </button>
+            </button></a>
           </div>
         </div>
       </div>
@@ -71,14 +69,14 @@ const GamingTopbar = () => {
       <div className="bg-gray-900 py-3 px-4 border-t border-gray-700">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap items-center justify-center md:justify-between text-sm text-gray-300 space-y-2 md:space-y-0">
-            <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+                <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse "></span>
                 <span>12,847 Players Online</span>
               </div>
               <div className="flex items-center space-x-2">
                 <span className="text-amber-400">🏆</span>
-                <span>$2.4M+ Won Today</span>
+                <span>₹2.4M+ Won Today</span>
               </div>
               <div className="flex items-center space-x-2">
                 <span className="text-red-500">🔴</span>
@@ -86,7 +84,7 @@ const GamingTopbar = () => {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4 text-xs">
+            <div className="flex items-center text-center md:text-left space-x-4 text-xs">
               <span className="bg-gray-800 px-3 py-1 rounded-full">🔒 SSL Secured</span>
               <span className="bg-gray-800 px-3 py-1 rounded-full">✓ Licensed</span>
               <span className="bg-gray-800 px-3 py-1 rounded-full">⚡ Instant Payouts</span>
@@ -94,6 +92,9 @@ const GamingTopbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Auto Deposit and Withdraw Section */}
+    
     </div>
   );
 };

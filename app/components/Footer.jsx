@@ -13,7 +13,7 @@ const Footer = () => {
             {['Home', 'About', 'Blog', 'Contact'].map((item) => (
               <li key={item}>
                 <Link
-                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                  href="#"
                   className="block hover:text-green-300 transition-colors"
                 >
                   {item}
@@ -30,7 +30,7 @@ const Footer = () => {
             {['Poker', 'Slots', 'Blackjack', 'Roulette'].map((game) => (
               <li key={game}>
                 <Link
-                  href={`/games/${game.toLowerCase()}`}
+                  href="#"
                   className="block hover:text-green-300 transition-colors"
                 >
                   {game}
@@ -44,14 +44,10 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-semibold mb-4">Legal</h4>
           <ul className="space-y-2">
-            {[
-              { label: 'Terms of Service', href: '/terms' },
-              { label: 'Privacy Policy', href: '/privacy' },
-              { label: 'Responsible Gaming', href: '/responsible-gaming' }
-            ].map(({ label, href }) => (
+            {['Terms of Service', 'Privacy Policy', 'Responsible Gaming'].map((label) => (
               <li key={label}>
                 <Link
-                  href={href}
+                  href="#"
                   className="block hover:text-green-300 transition-colors"
                 >
                   {label}
@@ -65,14 +61,10 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-semibold mb-4">Support</h4>
           <ul className="space-y-2">
-            {[
-              { label: 'FAQ', href: '/faq' },
-              { label: 'Live Chat', href: '/live-chat' },
-              { label: 'Support Tickets', href: '/support' }
-            ].map(({ label, href }) => (
+            {['FAQ', 'Live Chat', 'Support Tickets'].map((label) => (
               <li key={label}>
                 <Link
-                  href={href}
+                  href="#"
                   className="block hover:text-green-300 transition-colors"
                 >
                   {label}
