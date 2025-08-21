@@ -1,15 +1,16 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import Marquee from 'react-fast-marquee';
+import dynamic from 'next/dynamic';
+
+// Make Marquee client-only to avoid SSR/CSR mismatch
+const Marquee = dynamic(() => import('react-fast-marquee'), { ssr: false });
 
 const GamingTopbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Close menu on Escape for accessibility
+  // Optional: close on Escape for sanity
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === 'Escape') setIsMenuOpen(false);
-    };
+    const onKey = (e) => e.key === 'Escape' && setIsMenuOpen(false);
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
@@ -58,7 +59,7 @@ const GamingTopbar = () => {
             <a href="casino" className="hover:text-amber-400 transition-colors font-medium">Casino Betting</a>
           </nav>
 
-          {/* User Actions (anchors styled like buttons; no button-inside-a) */}
+          {/* User Actions (anchors styled like buttons; no nesting) */}
           <div className="flex items-center space-x-4">
             <div className="hidden sm:flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-full">
               <span className="text-sm text-gray-300">Bonus: upto</span>
@@ -99,9 +100,9 @@ const GamingTopbar = () => {
         </nav>
       </div>
 
-      {/* Promotions Marquee */}
+      {/* Promotions Marquee (client-only) */}
       <div className="bg-gradient-to-r from-gray-800 to-gray-700 py-2">
-        <Marquee gradient={false} speed={30} pauseOnHover={true} className="text-amber-400">
+        <Marquee gradient={false} speed={30} pauseOnHover className="text-amber-400">
           {promotions.map((promo, index) => (
             <span key={index} className="mx-8 font-medium text-sm flex items-center">
               {promo}
