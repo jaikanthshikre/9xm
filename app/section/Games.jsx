@@ -1,6 +1,5 @@
 'use client'
-import { useState } from 'react'
-import Image from 'next/image'
+import { useMemo, useState } from 'react'
 import { ArrowDownCircle, Clock, Shield, Zap } from 'lucide-react';
 
 const Games = () => {
@@ -23,9 +22,32 @@ const Games = () => {
     { name: "slots", type: "Slot", image: "/images/slots.png" }
   ];
 
+  // Deterministic "random" so SSR and client match
+  const particles = useMemo(() => {
+    const N = 20;
+    // simple deterministic PRNG (LCG-ish)
+    const rand = (seed) => {
+      let t = seed + 0x6D2B79F5;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+    return Array.from({ length: N }, (_, i) => {
+      const r1 = rand(1337 + i * 3);
+      const r2 = rand(7331 + i * 5);
+      const r3 = rand(9001 + i * 7);
+      const r4 = rand(4242 + i * 11);
+      return {
+        left: `${Math.floor(r1 * 100)}%`,
+        top: `${Math.floor(r2 * 100)}%`,
+        delay: `${(r3 * 5).toFixed(2)}s`,
+        duration: `${(3 + r4 * 2).toFixed(2)}s`,
+      };
+    });
+  }, []);
+
   return (
     <>
-    
       <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-4 px-4 border-t border-gray-700 relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
@@ -36,7 +58,7 @@ const Games = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
 
-            {/* Left side - Brand info with enhanced styling */}
+            {/* Left side - Brand info */}
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
                 <div className="relative">
@@ -58,10 +80,8 @@ const Games = () => {
               </div>
             </div>
 
-            {/* Right side - Enhanced action buttons */}
+            {/* Right side - badges + actions */}
             <div className="flex items-center space-x-6">
-
-              {/* Features badges */}
               <div className="hidden md:flex items-center space-x-4 text-xs">
                 <div className="flex items-center space-x-1 bg-gray-700/50 rounded-full px-3 py-1 backdrop-blur-sm">
                   <Clock className="w-3 h-3 text-green-400" />
@@ -73,7 +93,6 @@ const Games = () => {
                 </div>
               </div>
 
-              {/* Action buttons with enhanced design */}
               <div className="flex items-center space-x-3 text-xs md:text-sm">
                 <button
                   onClick={() => window.open("https://www.9xmbet.com/", "_blank")}
@@ -126,8 +145,6 @@ const Games = () => {
         </div>
       </div>
 
-
-
       <section className="py-15 relative overflow-hidden bg-gradient-to-br from-amber-950 via-yellow-950 to-orange-950">
         {/* Luxurious Golden Background Effects */}
         <div className="absolute inset-0">
@@ -137,24 +154,24 @@ const Games = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-conic from-yellow-400/5 via-transparent to-amber-500/5 animate-spin" style={{ animationDuration: '60s' }}></div>
         </div>
 
-        {/* Golden Particles Effect */}
+        {/* Golden Particles Effect (deterministic) */}
         <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+          {particles.map((p, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-yellow-400 rounded-full opacity-70 animate-bounce"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
+                left: p.left,
+                top: p.top,
+                animationDelay: p.delay,
+                animationDuration: p.duration
               }}
-            ></div>
+            />
           ))}
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          {/* Majestic Header */}
+          {/* Header */}
           <div className="text-center mb-24">
             <div className="inline-block relative">
               <h2 className="text-4xl md:text-7xl font-black bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-300 bg-clip-text text-transparent mb-8 tracking-wider">
@@ -179,7 +196,7 @@ const Games = () => {
             </p>
           </div>
 
-          {/* Premium Games Grid */}
+          {/* Games Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {games.map((game, index) => (
               <a
@@ -192,11 +209,10 @@ const Games = () => {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div className="relative bg-gradient-to-br from-amber-900/40 via-yellow-900/30 to-orange-900/40 backdrop-blur-xl border-2 border-yellow-400/40 rounded-3xl overflow-hidden hover:border-yellow-300 transition-all duration-700 hover:shadow-2xl hover:shadow-yellow-400/40 group-hover:bg-gradient-to-br group-hover:from-yellow-900/50 group-hover:via-amber-900/40 group-hover:to-orange-900/50">
-                  
                   {/* Golden Border Animation */}
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 via-amber-400/30 to-yellow-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl animate-pulse"></div>
 
-                  {/* Game Image Container */}
+                  {/* Game Image */}
                   <div className="relative h-48 w-full overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
                     <img
@@ -204,12 +220,10 @@ const Games = () => {
                       alt={game.name}
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125"
                     />
-
-                    {/* Golden Overlay Effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
                   </div>
 
-                  {/* Luxurious Game Info */}
+                  {/* Game Info */}
                   <div className="p-6 relative z-10">
                     <div className="flex items-center justify-between mb-4">
                       <span className="inline-block text-sm bg-gradient-to-r from-yellow-400 to-amber-400 text-black px-4 py-2 rounded-full font-bold shadow-lg">
@@ -248,13 +262,16 @@ const Games = () => {
             ))}
           </div>
 
-          {/* Royal CTA Section */}
+          {/* CTA Section — remove nested button; one clickable element */}
           <div className="text-center">
             <div className="inline-block group mb-8">
-              <button className="relative px-5 md:px-16 md:py-6 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 text-black rounded-full text-lg md:text-2xl font-black shadow-2xl hover:shadow-yellow-400/50 transition-all duration-500 transform hover:scale-110 overflow-hidden border-4 border-yellow-300 hover:border-yellow-200">
+              <button
+                onClick={() => window.open("https://www.9xmbet.com/", "_blank")}
+                className="relative px-5 md:px-16 md:py-6 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 text-black rounded-full text-lg md:text-2xl font-black shadow-2xl hover:shadow-yellow-400/50 transition-all duration-500 transform hover:scale-110 overflow-hidden border-4 border-yellow-300 hover:border-yellow-200"
+              >
                 <span className="relative z-10 flex items-center space-x-3">
                   <span>👑</span>
-                  <button onClick={() => window.open("https://www.9xmbet.com/", "_blank")}>DISCOVER ALL TREASURES</button>
+                  <span>DISCOVER ALL TREASURES</span>
                   <span>💎</span>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-amber-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
