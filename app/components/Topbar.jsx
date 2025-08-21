@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 // Make Marquee client-only to avoid SSR/CSR mismatch
 const Marquee = dynamic(() => import('react-fast-marquee'), { ssr: false });
@@ -47,16 +48,16 @@ const GamingTopbar = () => {
               </svg>
             </button>
             <div>
-              <a href="/"><img src="/images/logo.jpeg" alt="Logo" className="h-14 w-auto" /></a>
+              <Link href="/"><img src="/images/logo.jpeg" alt="Logo" className="h-14 w-auto" /></Link>
             </div>
           </div>
 
           {/* Navigation Links - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="cricket" className="hover:text-amber-400 transition-colors font-medium">Cricket</a>
-            <a href="football" className="hover:text-amber-400 transition-colors font-medium">FootBall</a>
-            <a href="tennis" className="hover:text-amber-400 transition-colors font-medium">Tennis</a>
-            <a href="casino" className="hover:text-amber-400 transition-colors font-medium">Casino Betting</a>
+            <Link href="cricket" className="hover:text-amber-400 transition-colors font-medium">Cricket</Link>
+            <Link href="football" className="hover:text-amber-400 transition-colors font-medium">FootBall</Link>
+            <Link href="tennis" className="hover:text-amber-400 transition-colors font-medium">Tennis</Link>
+            <Link href="casino" className="hover:text-amber-400 transition-colors font-medium">Casino Betting</Link>
           </nav>
 
           {/* User Actions (anchors styled like buttons; no nesting) */}
@@ -66,23 +67,23 @@ const GamingTopbar = () => {
               <span className="font-bold text-amber-400">₹1,0000.00</span>
             </div>
 
-            <a
+            <Link
               href="https://wa.link/hwb"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-amber-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-400 transition-colors inline-flex items-center justify-center"
             >
               Login
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="https://wa.link/hwb"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-500 transition-colors inline-flex items-center justify-center"
             >
               Register
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -93,10 +94,10 @@ const GamingTopbar = () => {
         className={`md:hidden bg-gray-900 transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-64 py-3' : 'max-h-0 py-0'}`}
       >
         <nav className="flex flex-col space-y-4 px-4 text-white" role="menu">
-          <a href="cricket" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">Cricket</a>
-          <a href="football" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">FootBall</a>
-          <a href="tennis" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">Tennis</a>
-          <a href="casino" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">Casino Betting</a>
+          <Link href="cricket" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">Cricket</Link>
+          <Link href="football" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">FootBall</Link>
+          <Link href="tennis" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">Tennis</Link>
+          <Link href="casino" onClick={() => setIsMenuOpen(false)} className="hover:text-amber-400 transition-colors font-medium py-2" role="menuitem">Casino Betting</Link>
         </nav>
       </div>
 
