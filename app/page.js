@@ -6,14 +6,19 @@ import Testimonial from "./section/Testimonials";
 import Games from "./section/Games";
 import WhyChooseUs from "./section/Whychooseus";
 
+
 export default function Home() {
   return (
-<>
-<GamingHeroSection/>
-<Games/>
-<WhyChooseUs/>
-<FaqSection/>
-<Testimonial/>
-</>
+    <>
+
+      <div>
+        <img src="/images/banner.jpg" alt="" />
+      </div>
+<Games />
+      <GamingHeroSection />
+      <WhyChooseUs />
+      <FaqSection />
+      <Testimonial />
+    </>
   );
 }
