@@ -111,7 +111,7 @@ const Games = () => {
                 >
                   <div className="flex items-center space-x-2">
                     <ArrowDownCircle className="w-5 h-5 group-hover:animate-bounce" />
-                    <span>Auto Deposit</span>
+                    <span>Auto Withdraw</span>
                   </div>
                   <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
