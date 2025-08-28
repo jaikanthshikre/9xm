@@ -112,9 +112,9 @@ export default function TestimonialsSplit() {
                     <strong>18+ only.</strong> Set limits and never bet more than you can afford to lose. If you need support, reach out to responsible gaming resources.
                   </p>
                 </div>
-                <a href="#responsible-play" className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm hover:bg-white/10">
+            <div className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm hover:bg-white/10">
                   Learn more
-                </a>
+                </div>
               </div>
             </div>
           </div>

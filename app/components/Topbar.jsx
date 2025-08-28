@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
-// Make Marquee client-only to avoid SSR/CSR mismatch
+
 const Marquee = dynamic(() => import('react-fast-marquee'), { ssr: false });
 
 const GamingTopbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Optional: close on Escape for sanity
+ 
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && setIsMenuOpen(false);
     window.addEventListener('keydown', onKey);
@@ -27,7 +27,7 @@ const GamingTopbar = () => {
 
   return (
     <div className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-b border-gray-700 shadow-md">
-      {/* Main Topbar */}
+  
       <div className="bg-gray-950 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo and Mobile Menu Button */}

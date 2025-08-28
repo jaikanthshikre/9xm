@@ -6,15 +6,21 @@ import Testimonial from "./section/Testimonials";
 import Games from "./section/Games";
 import WhyChooseUs from "./section/Whychooseus";
 
-
 export default function Home() {
   return (
     <>
-
-      <div>
-        <img src="/images/banner.jpg" alt="" />
+      <div className="w-full">
+        <Image
+          src="/images/banner.webp"
+          alt="Gaming Banner"
+          width={1920}  
+          height={600}   
+          priority       
+          quality={90}   
+          className="w-full h-auto"
+        />
       </div>
-<Games />
+      <Games />
       <GamingHeroSection />
       <WhyChooseUs />
       <FaqSection />

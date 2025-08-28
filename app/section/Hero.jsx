@@ -1,5 +1,6 @@
 'use client'
-import { ArrowDownCircle, ArrowUpCircle, Clock, Shield, Zap } from 'lucide-react';
+
+import Link from 'next/link';
 
 import React, { useState, useEffect } from 'react';
 
@@ -128,7 +129,7 @@ const GamingHeroSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={()=> window.open('https:www.9xmbet.com/')} className="bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transform hover:scale-105 transition-all duration-200 shadow-amber-500/30 shadow-lg">
+                <button className="bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transform hover:scale-105 transition-all duration-200 shadow-amber-500/30 shadow-lg">
                   {heroSlides[currentSlide].cta}
                 </button>
                 <button className="border-2 border-amber-400 text-amber-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-amber-400 hover:text-black transition-all duration-200">
@@ -184,9 +185,9 @@ const GamingHeroSection = () => {
                   </div>
                 ))}
               </div>
-              <button className="w-full mt-4 bg-amber-500 text-black py-3 rounded-xl font-semibold hover:brightness-110 transition-colors">
+             <Link href="https://wa.link/hwb"> <button className="w-full mt-4 bg-amber-500 text-black py-3 rounded-xl font-semibold hover:brightness-110 transition-colors">
                 View All Games
-              </button>
+              </button></Link>
             </div>
 
             {/* Live Stats */}
